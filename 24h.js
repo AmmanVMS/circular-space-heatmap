@@ -4,6 +4,7 @@ var ID = {
         text: "errormessage",
         layer: "error",
     },
+    day: "day"
 }
 
 var SETTINGS = {
@@ -18,7 +19,7 @@ var DAY_ID_TO_API = {
     "Tu": "Tuesday",
     "We": "Wednesday",
     "Th": "Thursday",
-    "Fr": "Fiday",
+    "Fr": "Friday",
     "Sa": "Saturday",
     "Su": "Sunday"
 }
@@ -28,6 +29,11 @@ var DATE_TO_DAY_ID = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
 var DAY_ID_TO_LANG_TO_TEXT = {
     "en" : {"Mo": "MO", "Tu": "TU", "We": "WE", "Th": "TH", "Fr": "FR", "Sa": "SA", "Su": "SU"},
     "de" : {"Mo": "MO", "Tu": "DI", "We": "MI", "Th": "DO", "Fr": "FR", "Sa": "SA", "Su": "SO"},
+}
+
+var INDEX_TO_ID = [];
+for (var i = 0; i < 24; i++) {
+    INDEX_TO_ID.push((i < 10 ? "0" : "") + i + "00");
 }
 
 /* Get the name of the day by id.
@@ -90,7 +96,7 @@ function loadSpaceDataFromParameters() {
     var params = new URLSearchParams(window.location.search);
     var id = params.get("id");
     var period = params.get("period");
-    requestSpaceData(id, period, showSpaceData);
+    requestSpaceData(id, period, showSpaceDataForToday);
 }
 
 function escapeHTML(str){
@@ -138,16 +144,48 @@ function addErrorMessage(message) {
 }
 
 
-function showSpaceData(data) {
+function showSpaceDataForToday(data) {
     console.log("received data", data);
     var today = DATE_TO_DAY_ID[new Date().getDay()];
     console.log("It is " + today);
     showSpaceDataFor(data.data, today);
 }
 
+/* Show the space data for a specific day.
+ *
+ */
 function showSpaceDataFor(allData, day) {
     var data = allData[DAY_ID_TO_API[day]];
-    console.log("Show data for " + day, data);
+    console.log("Show data for " + day, data, allData);
+    for (var i = 0; i < 24; i++) {
+        var id = INDEX_TO_ID[i];
+        var value = parseFloat(data[i] + "");
+        showHeat(id, value);
+    }
+    changeDay = function () {
+        var nextDay = DATE_TO_DAY_ID[(DATE_TO_DAY_ID.indexOf(day) + 1) % DATE_TO_DAY_ID.length];
+        showSpaceDataFor(allData, nextDay);
+    }
+    document.getElementById(ID.day).children[0].innerHTML = escapeHTML(getDayName(day));
+}
+
+/* Change the day by clicking the middle.
+ *
+ */
+function changeDay() {
+    // Will be replaced.
+}
+
+/* Show the heat for an element with an id and a value
+ * 0 <= value <= 1  
+ */
+function showHeat(id, value) {
+    var element = document.getElementById(id);
+    var green = Math.ceil(255 * value);
+    var color = "rgb(" + (255 - green) + ", " + green + ", 0)";
+    element.style.fill = color;
+    element.style.fillOpacity = 1;
+//    console.log("showHeat", id, color, element);
 }
 
 window.addEventListener("load", function() {
