@@ -443,7 +443,7 @@
      inkscape:groupmode="layer"
      id="error"
      inkscape:label="error"
-     style="display:inline">
+     style="display:none">
     <rect
        style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.277171;stroke-opacity:1"
        id="rect8789"
@@ -453,57 +453,57 @@
        y="-4.052314e-15" />
     <text
        xml:space="preserve"
-       style="font-size:1.76389px;line-height:1.25;font-family:sans-serif;text-align:justify;white-space:pre;stroke-width:0.264583;shape-inside:url(#rect8789)"
+       style="font-size:1.76389px;line-height:1.25;font-family:sans-serif;text-align:justify;white-space:pre;shape-inside:url(#rect8789);stroke-width:0.264583"
        x="7.5551209"
        y="8.1683722"
        id="errormessage"><tspan
          x="0"
          y="1.5606293"
-         id="tspan4966">error
+         id="tspan6811">error
 </tspan><tspan
          x="0"
          y="3.7654919"
-         id="tspan4968">error
+         id="tspan6813">error
 </tspan><tspan
          x="0"
          y="5.9703545"
-         id="tspan4970">error
+         id="tspan6815">error
 </tspan><tspan
          x="0"
          y="8.175217"
-         id="tspan4972">error
+         id="tspan6817">error
 </tspan><tspan
          x="0"
          y="10.38008"
-         id="tspan4974">error
+         id="tspan6819">error
 </tspan><tspan
          x="0"
          y="12.584942"
-         id="tspan4976">error
+         id="tspan6821">error
 </tspan><tspan
          x="0"
          y="14.789805"
-         id="tspan4978">error
+         id="tspan6823">error
 </tspan><tspan
          x="0"
          y="16.994667"
-         id="tspan4980">error
+         id="tspan6825">error
 </tspan><tspan
          x="0"
          y="19.19953"
-         id="tspan4982">error
+         id="tspan6827">error
 </tspan><tspan
          x="0"
          y="21.404393"
-         id="tspan4984">error
+         id="tspan6829">error
 </tspan><tspan
          x="0"
          y="23.609255"
-         id="tspan4986">error
+         id="tspan6831">error
 </tspan><tspan
          x="0"
          y="25.814118"
-         id="tspan4988">error</tspan></text>
+         id="tspan6833">error</tspan></text>
   </g>
   <metadata
      id="metadata8654">

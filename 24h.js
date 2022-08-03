@@ -7,11 +7,38 @@ var ID = {
 }
 
 var SETTINGS = {
-    url: "https://mapall.space/heatmap/json.php"
+    url: "https://mapall.space/heatmap/json.php",
+    language: {
+        default: "en"
+    },
 }
 
+var DAY_ID_TO_API = {
+    "Mo": "Monday", 
+    "Tu": "Tuesday",
+    "We": "Wednesday",
+    "Th": "Thursday",
+    "Fr": "Fiday",
+    "Sa": "Saturday",
+    "Su": "Sunday"
+}
 
+var DATE_TO_DAY_ID = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
 
+var DAY_ID_TO_LANG_TO_TEXT = {
+    "en" : {"Mo": "MO", "Tu": "TU", "We": "WE", "Th": "TH", "Fr": "FR", "Sa": "SA", "Su": "SU"},
+    "de" : {"Mo": "MO", "Tu": "DI", "We": "MI", "Th": "DO", "Fr": "FR", "Sa": "SA", "Su": "SO"},
+}
+
+/* Get the name of the day by id.
+ * from https://stackoverflow.com/a/8199791
+ */
+function getDayName(id) {
+    var userLang = navigator.language || navigator.userLanguage;
+    var lang = userLang.split("-")[0];
+    var translations = DAY_ID_TO_LANG_TO_TEXT[lang] || DAY_ID_TO_LANG_TO_TEXT[SETTINGS.language.default];
+    return translations[id] || id;
+}
 
 /* Request data from a space given by id and period.
  * see https://github.com/zeno4ever/map-all-spaces
@@ -86,12 +113,48 @@ function defaultOnError(req, err) {
  */
 function reportError(message) {
     console.log(message);
-    document.getElementById(ID.error.text).children[0].innerHTML = escapeHTML(message);
-    document.getElementById(ID.error.text).children[1].innerHTML = "Error, look into console.";
+    addErrorMessage("Error, look into console.");
+    addErrorMessage(message);
     document.getElementById(ID.error.layer).style = "display: inline;";
 }
 
+/* Add an error message for the user.
+ * Do not add message twice.
+ *
+ */
+function addErrorMessage(message) {
+    var children = document.getElementById(ID.error.text).children;
+    var html = escapeHTML(message);
+    var i = 0;
+    while (children.length > i && children[i].innerHTML != "error\n") {
+        if (html == children[i].innerHTML) {
+            return;
+        }
+        i++;
+    }
+    if (children.length > i) {
+        children[i].innerHTML = html;
+    }
+}
+
+
+function showSpaceData(data) {
+    console.log("received data", data);
+    var today = DATE_TO_DAY_ID[new Date().getDay()];
+    console.log("It is " + today);
+    showSpaceDataFor(data.data, today);
+}
+
+function showSpaceDataFor(allData, day) {
+    var data = allData[DAY_ID_TO_API[day]];
+    console.log("Show data for " + day, data);
+}
 
 window.addEventListener("load", function() {
-    loadSpaceDataFromParameters();
+    try {
+        loadSpaceDataFromParameters();
+    } catch (err) {
+        reportError(err.message);
+    }
 });
+
