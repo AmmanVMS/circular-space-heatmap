@@ -1,12 +1,16 @@
 
 function onSuccess(json) {
-    document.getElementById("spaces").innerHTML = "";
+    var spaces = document.getElementById("spaces");
+    var value = spaces.value;
+    spaces.innerHTML = "";
     // from https://attacomsian.com/blog/javascript-iterate-objects
     for (const space in json) {
         if (json.hasOwnProperty(space)) {
             addSpace(space);
         }
     }
+    spaces.value = value;
+    showImage();
 }
 
 var xmlhttp = new XMLHttpRequest();
