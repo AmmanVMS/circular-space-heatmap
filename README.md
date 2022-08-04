@@ -1,4 +1,4 @@
-# circular-space-heatmap
+# Circular Hackerspace Status Heatmap
 
 Shows the [mapall.space](https://mapall.space) heatmap for hackerspace availability.
 
