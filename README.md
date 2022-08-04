@@ -1,6 +1,6 @@
 # circular-space-heatmap
 
-Shows the mapall.space heatmap for hackerspace availability.
+Shows the [mapall.space](https://mapall.space) heatmap for hackerspace availability.
 
 **[USE IT][web]**
 
