@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Circular Hackerspace Heatmap</title>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <h1>Circular Hackerspace Availability</h1>
+    <p>
+        This page shows an svg file that you can embed as a clock to show when the space is
+        usually open.
+    </p>
+    <h2>Customization</h2>
+    <!-- option menu from https://blog.hubspot.com/website/html-dropdown -->
+    <label for="spaces">Choose a hackerspace:</label>
+    <select name="spaces" id="spaces" onchange="showImage()" >
+      <option value="">Loading...</option>
+    </select>
+    <br/>
+    <label for="period">Choose a time period:</label>
+    <select name="period" id="period" onchange="showImage()">
+      <option value="week">Week</option>
+      <option value="month">Month</option>
+      <option value="year">Year</option>
+      <option value="everything">Everything</option>
+    </select>
+    <hr/>
+    <!-- embed image form https://www.ionos.com/digitalguide/websites/website-creation/svg-format-how-to-embed-svg-vector-graphics/ -->
+    <object data='24h.svg' type='image/svg+xml' id="mapobject">
+      <!—Fallback solution when SVG doesn’t load -->
+      <img src='alternativegraphic.png' id="mapimg">
+    </object>
+  </body>
+</html>
+
+
