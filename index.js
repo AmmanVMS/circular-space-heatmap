@@ -55,7 +55,7 @@ function showImage() {
         url = document.location.href.replace(/index\.html$/, "") + url;
     }
     // fill UI
-    document.getElementById("mapimg").src = url;
+    document.getElementById("mapembed").src = url;
     document.getElementById("favicon").href = url;
     document.getElementById("mapobj").data = url;
     document.getElementById("mapcode").innerText = document.getElementById("map").innerHTML;

@@ -42,10 +42,10 @@
         </select>
         <hr/>
         <!-- embed image form https://www.ionos.com/digitalguide/websites/website-creation/svg-format-how-to-embed-svg-vector-graphics/ -->
-        Link to image: <a href="" id="imagelink"></a><br/>
+        Link to image: <a href="" id="imagelink" target="_blank"></a><br/>
         <span id="map"><object data='24h.svg?id=/dev/tal&period=week' type='image/svg+xml' id="mapobj">
-  <!—Fallback solution when SVG doesn’t load -->
-  <img src='24h.svg?id=/dev/tal&period=week' id="mapimg">
+  <!-- Fallback solution when SVG doesn’t load -->
+  <embed type="image/svg+xml" src="24h.svg?id=/dev/tal&period=week" id="mapembed" />
 </object></span>
         <pre id="mapcode">
         </pre>
