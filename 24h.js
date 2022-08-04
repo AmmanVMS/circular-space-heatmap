@@ -16,7 +16,11 @@ var SETTINGS = {
         clone: {
             id: "1800",
             hour: 18
-        }
+        },
+        range: {
+            min: 24 /* center - 1 */ / 100 /* width */,
+            max: 1
+        },
     }
 }
 
@@ -212,11 +216,15 @@ function showHeat(hour, id, value) {
     element.style.fill = color;
     element.style.fillOpacity = 1;
 
+    // compute element
+    var deg = Math.ceil(15 * (hour - SETTINGS.hour.clone.hour));
+    var scale = SETTINGS.hour.range.min + (SETTINGS.hour.range.max - SETTINGS.hour.range.min) * value;
+
     // set element rotation
     // see https://stackoverflow.com/a/58805105
     element.style.transformBox = "fill-box";
     element.style.transformOrigin = "0px 0px";
-    element.style.transform = "rotate(" + Math.ceil(15 * (hour - SETTINGS.hour.clone.hour)) + "deg)";
+    element.style.transform = "rotate(" + deg + "deg) scale(" + scale + ")";
 //    element.setAttribute("transform")
 //    element.style.transform = "rotate(" + Math.ceil() + "deg)";
 
