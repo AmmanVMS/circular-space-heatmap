@@ -18,9 +18,12 @@ var SETTINGS = {
             hour: 18
         },
         range: {
-            min: 24 /* center - 1 */ / 100 /* width */,
+            min: 30 /* center - 1 */ / 100 /* width */,
             max: 1
         },
+    },
+    day: {
+        default: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     }
 }
 
@@ -99,7 +102,8 @@ function requestSpaceData(id, period, onSuccess, onError) {
         }
     };
     xmlhttp.open("GET", url, true);
-    xmlhttp.send();    
+    xmlhttp.send();
+    console.log("requesting " + url);
 }
 
 function loadSpaceDataFromParameters() {
@@ -176,11 +180,11 @@ function showSpaceDataForToday(data) {
  *
  */
 function showSpaceDataFor(allData, day) {
-    var data = allData[DAY_ID_TO_API[day]];
+    var data = allData[DAY_ID_TO_API[day]] || SETTINGS.defaultDay;
     console.log("Show data for " + day, data, allData);
     for (var hour = 0; hour < 24; hour++) {
         var id = INDEX_TO_ID[hour];
-        var value = parseFloat(data[hour] + "");
+        var value = data[hour] ? parseFloat(data[hour] + "") : SETTINGS.day.default[hour];
         showHeat(hour, id, value);
     }
     changeDay = function () {
@@ -211,8 +215,19 @@ function showHeat(hour, id, value) {
     element.id = id;
 
     // compute color
-    var green = Math.ceil(255 * value);
-    var color = "rgb(" + (255 - green) + ", " + green + ", 0)";
+    // red -> yellow -> green
+    var green;
+    var red;
+    if (value < 0.5) {
+        green = value * 2;
+        red = 1;
+    } else {
+        green = 1;
+        red = 1 - (value - 0.5) * 2;
+    }
+    green = Math.ceil(255 * green);
+    red = Math.ceil(255 * red);
+    var color = "rgb(" + red + ", " + green + ", 0)";
     element.style.fill = color;
     element.style.fillOpacity = 1;
 
