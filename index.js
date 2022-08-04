@@ -38,11 +38,18 @@ function addSpace(space) {
 }
 
 function showImage() {
+    // get params
     var params = new URLSearchParams();
     params.set("id", document.getElementById("spaces").value);
     params.set("period", document.getElementById("period").value);
     params.set("day", document.getElementById("day").value);
+    // construct url
     var url = "24h.svg?" + params.toString();
+    if (document.location.protocol != "file:") {
+        // absolute URL
+        url = document.location.href.replace(/index\.html$/, "") + url;
+    }
+    // fill UI
     document.getElementById("mapimg").src = url;
     document.getElementById("mapobj").data = url;
     document.getElementById("mapcode").innerText = document.getElementById("map").innerHTML;
