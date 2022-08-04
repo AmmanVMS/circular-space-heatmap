@@ -39,7 +39,7 @@
      inkscape:document-units="px"
      showgrid="false"
      inkscape:zoom="1.9911411"
-     inkscape:cx="126.05837"
+     inkscape:cx="124.04947"
      inkscape:cy="86.382625"
      inkscape:window-width="1600"
      inkscape:window-height="851"
@@ -355,7 +355,7 @@
        inkscape:transform-center-y="-12.778403"
        transform="rotate(-120)" />
     <path
-       style="fill:#333333;fill-opacity:0.280304;stroke:none;stroke-width:0.295543;stroke-opacity:1"
+       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.295543;stroke-opacity:1"
        id="1100"
        sodipodi:type="arc"
        sodipodi:cx="-121.0463"
@@ -621,51 +621,51 @@
        id="errormessage"><tspan
          x="0"
          y="1.5606293"
-         id="tspan1098">error
+         id="tspan1215">error
 </tspan><tspan
          x="0"
          y="3.7654919"
-         id="tspan1100">error
+         id="tspan1217">error
 </tspan><tspan
          x="0"
          y="5.9703545"
-         id="tspan1102">error
+         id="tspan1219">error
 </tspan><tspan
          x="0"
          y="8.175217"
-         id="tspan1104">error
+         id="tspan1221">error
 </tspan><tspan
          x="0"
          y="10.38008"
-         id="tspan1106">error
+         id="tspan1223">error
 </tspan><tspan
          x="0"
          y="12.584942"
-         id="tspan1108">error
+         id="tspan1225">error
 </tspan><tspan
          x="0"
          y="14.789805"
-         id="tspan1110">error
+         id="tspan1227">error
 </tspan><tspan
          x="0"
          y="16.994667"
-         id="tspan1112">error
+         id="tspan1229">error
 </tspan><tspan
          x="0"
          y="19.19953"
-         id="tspan1114">error
+         id="tspan1231">error
 </tspan><tspan
          x="0"
          y="21.404393"
-         id="tspan1116">error
+         id="tspan1233">error
 </tspan><tspan
          x="0"
          y="23.609255"
-         id="tspan1118">error
+         id="tspan1235">error
 </tspan><tspan
          x="0"
          y="25.814118"
-         id="tspan1120">error</tspan></text>
+         id="tspan1237">error</tspan></text>
   </g>
   <metadata
      id="metadata8654">
