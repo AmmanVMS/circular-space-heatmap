@@ -478,7 +478,7 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="time"
-     style="display:none">
+     style="display:inline">
     <text
        xml:space="preserve"
        style="font-size:3.52777px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke-width:0.264583;filter:url(#filter11576)"
@@ -580,7 +580,7 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="day"
-     style="display:none">
+     style="display:inline">
     <circle
        style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.15178;stroke-opacity:1"
        id="daybg"
@@ -621,51 +621,51 @@
        id="errormessage"><tspan
          x="0"
          y="1.5606293"
-         id="tspan999">error
+         id="tspan1098">error
 </tspan><tspan
          x="0"
          y="3.7654919"
-         id="tspan1001">error
+         id="tspan1100">error
 </tspan><tspan
          x="0"
          y="5.9703545"
-         id="tspan1003">error
+         id="tspan1102">error
 </tspan><tspan
          x="0"
          y="8.175217"
-         id="tspan1005">error
+         id="tspan1104">error
 </tspan><tspan
          x="0"
          y="10.38008"
-         id="tspan1007">error
+         id="tspan1106">error
 </tspan><tspan
          x="0"
          y="12.584942"
-         id="tspan1009">error
+         id="tspan1108">error
 </tspan><tspan
          x="0"
          y="14.789805"
-         id="tspan1011">error
+         id="tspan1110">error
 </tspan><tspan
          x="0"
          y="16.994667"
-         id="tspan1013">error
+         id="tspan1112">error
 </tspan><tspan
          x="0"
          y="19.19953"
-         id="tspan1015">error
+         id="tspan1114">error
 </tspan><tspan
          x="0"
          y="21.404393"
-         id="tspan1017">error
+         id="tspan1116">error
 </tspan><tspan
          x="0"
          y="23.609255"
-         id="tspan1019">error
+         id="tspan1118">error
 </tspan><tspan
          x="0"
          y="25.814118"
-         id="tspan1021">error</tspan></text>
+         id="tspan1120">error</tspan></text>
   </g>
   <metadata
      id="metadata8654">
