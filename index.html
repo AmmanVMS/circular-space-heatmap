@@ -25,7 +25,7 @@
         <select name="period" id="period" onchange="showImage()">
           <option value="week">Week</option>
           <option value="month">Month</option>
-          <option value="year">Year</option>
+          <option value="year" selected>Year</option>
           <option value="everything">Everything</option>
         </select>
         <br/>
@@ -42,6 +42,7 @@
         </select>
         <hr/>
         <!-- embed image form https://www.ionos.com/digitalguide/websites/website-creation/svg-format-how-to-embed-svg-vector-graphics/ -->
+        Link to image: <a href="" id="imagelink"></a><br/>
         <span id="map"><object data='24h.svg?id=/dev/tal&period=week' type='image/svg+xml' id="mapobj">
   <!—Fallback solution when SVG doesn’t load -->
   <img src='24h.svg?id=/dev/tal&period=week' id="mapimg">

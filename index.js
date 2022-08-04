@@ -59,6 +59,8 @@ function showImage() {
     document.getElementById("favicon").href = url;
     document.getElementById("mapobj").data = url;
     document.getElementById("mapcode").innerText = document.getElementById("map").innerHTML;
+    document.getElementById("imagelink").href = url;
+    document.getElementById("imagelink").innerText = url;
 }
 
 function escapeHTML(str){

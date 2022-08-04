@@ -8,8 +8,17 @@ main {
     padding: 0.5em;
 }
 
-#mapcode {
+#mapcode, #imagelink {
     background-color: #cccccc;
     padding: 0.5em;
 }
 
+#mapobj {
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+#mapobj {
+    border-color: black;
+    border-style: solid;
+}
