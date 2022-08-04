@@ -41,6 +41,7 @@ function showImage() {
     var params = new URLSearchParams();
     params.set("id", document.getElementById("spaces").value);
     params.set("period", document.getElementById("period").value);
+    params.set("day", document.getElementById("day").value);
     var url = "24h.svg?" + params.toString();
     document.getElementById("mapobject").data = url;
     document.getElementById("mapimg").src = url;

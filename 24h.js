@@ -95,8 +95,19 @@ function requestSpaceData(id, period, onSuccess, onError) {
 function loadSpaceDataFromParameters() {
     var params = new URLSearchParams(window.location.search);
     var id = params.get("id");
-    var period = params.get("period");
-    requestSpaceData(id, period, showSpaceDataForToday);
+    var period = params.get("period", "");
+    var day = params.get("day");
+    if (day && !DATE_TO_DAY_ID.includes(day)) {
+        reportError("Day parameter should be absent, empty or one of " + DATE_TO_DAY_ID.join(", ") + ".")
+        return;
+    }
+    requestSpaceData(id, period, function(data) {
+        if (!day) {
+            showSpaceDataForToday(data.data);
+        } else {
+            showSpaceDataFor(data.data, day);
+        }
+    });
     document.title = id;
 }
 
@@ -144,12 +155,11 @@ function addErrorMessage(message) {
     }
 }
 
-
 function showSpaceDataForToday(data) {
     console.log("received data", data);
     var today = DATE_TO_DAY_ID[new Date().getDay()];
     console.log("It is " + today);
-    showSpaceDataFor(data.data, today);
+    showSpaceDataFor(data, today);
 }
 
 /* Show the space data for a specific day.
