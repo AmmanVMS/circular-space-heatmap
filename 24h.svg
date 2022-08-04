@@ -21,7 +21,9 @@
      xlink:href="24h.js"
      id="script8729" />
   <link
+     xmlns="http://www.w3.org/1999/xhtml"
      rel="stylesheet"
+     xlink:href="24h.css"
      href="24h.css"
      type="text/css" />
   <title
@@ -36,15 +38,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="2.1800861"
-     inkscape:cx="34.63166"
-     inkscape:cy="97.702563"
+     inkscape:zoom="3.3149087"
+     inkscape:cx="167.42543"
+     inkscape:cy="146.91204"
      inkscape:window-width="1600"
      inkscape:window-height="851"
      inkscape:window-x="0"
      inkscape:window-y="25"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      inkscape:snap-center="true"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -52,7 +54,60 @@
      fit-margin-bottom="0"
      inkscape:snap-page="true" />
   <defs
-     id="defs2" />
+     id="defs2">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter11576"
+       x="-0.047983217"
+       y="-0.171643"
+       width="1.0959664"
+       height="1.343286">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.19082558"
+         id="feGaussianBlur11578" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter11808"
+       x="-0.008151389"
+       y="-0.022733377"
+       width="1.0163028"
+       height="1.0454668">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.025274027"
+         id="feGaussianBlur11810" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter11812"
+       x="-0.0081474119"
+       y="-0.022764364"
+       width="1.0162948"
+       height="1.0455287">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.025308477"
+         id="feGaussianBlur11814" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter11816"
+       x="-0.0076773144"
+       y="-0.027462879"
+       width="1.0153546"
+       height="1.0549258">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.030532092"
+         id="feGaussianBlur11818" />
+    </filter>
+  </defs>
   <g
      inkscape:label="wheel"
      inkscape:groupmode="layer"
@@ -314,7 +369,7 @@
        inkscape:transform-center-y="-13.115985"
        transform="rotate(-112.5)" />
     <path
-       style="fill:#ff0000;fill-opacity:1;stroke-width:0.295543;stroke:none;stroke-opacity:1"
+       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.295543;stroke-opacity:1"
        id="1200"
        sodipodi:type="arc"
        sodipodi:cx="-109.44247"
@@ -418,6 +473,94 @@
        inkscape:transform-center-x="-13.229156"
        inkscape:transform-center-y="1.7036078e-06"
        transform="rotate(-7.5)" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.52777px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583;filter:url(#filter11576);fill:#ffffff;fill-opacity:1"
+       x="109.46014"
+       y="72.46022"
+       id="text11574"><tspan
+         sodipodi:role="line"
+         id="tspan11572"
+         style="stroke-width:0.264583;fill:#ffffff;fill-opacity:1"
+         x="109.46014"
+         y="72.46022">12:00</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52777px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="109.46014"
+       y="72.46022"
+       id="text7553"><tspan
+         sodipodi:role="line"
+         id="tspan7551"
+         style="stroke-width:0.264583"
+         x="109.46014"
+         y="72.46022">12:00</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52777px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583;fill:#ffffff;fill-opacity:1;filter:url(#filter11816)"
+       x="130.39436"
+       y="97.250198"
+       id="text11780"><tspan
+         sodipodi:role="line"
+         id="tspan11778"
+         style="stroke-width:0.264583;fill:#ffffff;fill-opacity:1"
+         x="130.39436"
+         y="97.250198">18:00</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52777px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="130.39436"
+       y="97.250198"
+       id="text7553-3"><tspan
+         sodipodi:role="line"
+         id="tspan7551-0"
+         style="stroke-width:0.264583"
+         x="130.39436"
+         y="97.250198">18:00</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52777px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583;fill:#ffffff;fill-opacity:1;filter:url(#filter11812)"
+       x="109.53765"
+       y="121.7057"
+       id="text11784"><tspan
+         sodipodi:role="line"
+         id="tspan11782"
+         style="stroke-width:0.264583;fill:#ffffff;fill-opacity:1"
+         x="109.53765"
+         y="121.7057">0:00</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52777px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="109.53765"
+       y="121.7057"
+       id="text7553-9"><tspan
+         sodipodi:role="line"
+         id="tspan7551-2"
+         style="stroke-width:0.264583"
+         x="109.53765"
+         y="121.7057">0:00</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52777px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583;fill:#ffffff;fill-opacity:1;filter:url(#filter11808)"
+       x="87.249542"
+       y="97.250198"
+       id="text11788"><tspan
+         sodipodi:role="line"
+         id="tspan11786"
+         style="stroke-width:0.264583;fill:#ffffff;fill-opacity:1"
+         x="87.249542"
+         y="97.250198">6:00</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52777px;line-height:1.25;font-family:sans-serif;text-align:center;text-anchor:middle;stroke-width:0.264583"
+       x="87.249542"
+       y="97.250198"
+       id="text7553-5"><tspan
+         sodipodi:role="line"
+         id="tspan7551-4"
+         style="stroke-width:0.264583"
+         x="87.249542"
+         y="97.250198">6:00</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -464,51 +607,51 @@
        id="errormessage"><tspan
          x="0"
          y="1.5606293"
-         id="tspan3231">error
+         id="tspan12090">error
 </tspan><tspan
          x="0"
          y="3.7654919"
-         id="tspan3233">error
+         id="tspan12092">error
 </tspan><tspan
          x="0"
          y="5.9703545"
-         id="tspan3235">error
+         id="tspan12094">error
 </tspan><tspan
          x="0"
          y="8.175217"
-         id="tspan3237">error
+         id="tspan12096">error
 </tspan><tspan
          x="0"
          y="10.38008"
-         id="tspan3239">error
+         id="tspan12098">error
 </tspan><tspan
          x="0"
          y="12.584942"
-         id="tspan3241">error
+         id="tspan12100">error
 </tspan><tspan
          x="0"
          y="14.789805"
-         id="tspan3243">error
+         id="tspan12102">error
 </tspan><tspan
          x="0"
          y="16.994667"
-         id="tspan3245">error
+         id="tspan12104">error
 </tspan><tspan
          x="0"
          y="19.19953"
-         id="tspan3247">error
+         id="tspan12106">error
 </tspan><tspan
          x="0"
          y="21.404393"
-         id="tspan3249">error
+         id="tspan12108">error
 </tspan><tspan
          x="0"
          y="23.609255"
-         id="tspan3251">error
+         id="tspan12110">error
 </tspan><tspan
          x="0"
          y="25.814118"
-         id="tspan3253">error</tspan></text>
+         id="tspan12112">error</tspan></text>
   </g>
   <metadata
      id="metadata8654">

@@ -97,6 +97,7 @@ function loadSpaceDataFromParameters() {
     var id = params.get("id");
     var period = params.get("period");
     requestSpaceData(id, period, showSpaceDataForToday);
+    document.title = id;
 }
 
 function escapeHTML(str){
