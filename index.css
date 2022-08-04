@@ -1,0 +1,15 @@
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+}
+
+main {
+    padding: 0.5em;
+}
+
+#mapcode {
+    background-color: #cccccc;
+    padding: 0.5em;
+}
+

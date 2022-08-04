@@ -3,45 +3,50 @@
   <head>
     <title>Circular Hackerspace Heatmap</title>
     <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>Circular Hackerspace Availability</h1>
-    <p>
-        This page shows an svg file that you can embed as a clock to show when the space is
-        usually open.
-    </p>
-    <h2>Customization</h2>
-    <!-- option menu from https://blog.hubspot.com/website/html-dropdown -->
-    <label for="spaces">Choose a hackerspace:</label>
-    <select name="spaces" id="spaces" onchange="showImage()" >
-      <option value="">Loading...</option>
-    </select>
-    <br/>
-    <label for="period">Choose a time period:</label>
-    <select name="period" id="period" onchange="showImage()">
-      <option value="week">Week</option>
-      <option value="month">Month</option>
-      <option value="year">Year</option>
-      <option value="everything">Everything</option>
-    </select>
-    <br/>
-    <label for="day">Choose a day:</label>
-    <select name="day" id="day" onchange="showImage()">
-      <option value="">Today</option>
-      <option value="Mo">Monday</option>
-      <option value="Tu">Tuesday</option>
-      <option value="We">Wednesday</option>
-      <option value="Th">Thurday</option>
-      <option value="Fr">Friday</option>
-      <option value="Sa">Saturday</option>
-      <option value="Su">Sunday</option>
-    </select>
-    <hr/>
-    <!-- embed image form https://www.ionos.com/digitalguide/websites/website-creation/svg-format-how-to-embed-svg-vector-graphics/ -->
-    <object data='24h.svg?id=/dev/tal&period=week' type='image/svg+xml' id="mapobject">
-      <!—Fallback solution when SVG doesn’t load -->
-      <img src='24h.svg?id=/dev/tal&period=week' id="mapimg">
-    </object>
+    <main>
+        <h1>Circular Hackerspace Availability</h1>
+        <p>
+            This page shows an svg file that you can embed as a clock to show when the space is
+            usually open.
+        </p>
+        <h2>Customization</h2>
+        <!-- option menu from https://blog.hubspot.com/website/html-dropdown -->
+        <label for="spaces">Choose a hackerspace:</label>
+        <select name="spaces" id="spaces" onchange="showImage()" >
+          <option value="/dev/tal">Loading...</option>
+        </select>
+        <br/>
+        <label for="period">Choose a time period:</label>
+        <select name="period" id="period" onchange="showImage()">
+          <option value="week">Week</option>
+          <option value="month">Month</option>
+          <option value="year">Year</option>
+          <option value="everything">Everything</option>
+        </select>
+        <br/>
+        <label for="day">Choose a day:</label>
+        <select name="day" id="day" onchange="showImage()">
+          <option value="">Today</option>
+          <option value="Mo">Monday</option>
+          <option value="Tu">Tuesday</option>
+          <option value="We">Wednesday</option>
+          <option value="Th">Thurday</option>
+          <option value="Fr">Friday</option>
+          <option value="Sa">Saturday</option>
+          <option value="Su">Sunday</option>
+        </select>
+        <hr/>
+        <!-- embed image form https://www.ionos.com/digitalguide/websites/website-creation/svg-format-how-to-embed-svg-vector-graphics/ -->
+        <span id="map"><object data='24h.svg?id=/dev/tal&period=week' type='image/svg+xml' id="mapobj">
+  <!—Fallback solution when SVG doesn’t load -->
+  <img src='24h.svg?id=/dev/tal&period=week' id="mapimg">
+</object></span>
+        <pre id="mapcode">
+        </pre>
+    </main>
   </body>
 </html>
 

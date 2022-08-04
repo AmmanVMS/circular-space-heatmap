@@ -43,6 +43,13 @@ function showImage() {
     params.set("period", document.getElementById("period").value);
     params.set("day", document.getElementById("day").value);
     var url = "24h.svg?" + params.toString();
-    document.getElementById("mapobject").data = url;
     document.getElementById("mapimg").src = url;
+    document.getElementById("mapobj").data = url;
+    document.getElementById("mapcode").innerText = document.getElementById("map").innerHTML;
 }
+
+function escapeHTML(str){
+    // from https://stackoverflow.com/a/22706073
+    return new Option(str).innerHTML;
+}
+
