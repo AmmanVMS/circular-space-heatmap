@@ -4,7 +4,8 @@ var ID = {
         text: "errormessage",
         layer: "error",
     },
-    day: "day"
+    day: "day",
+    bg: "daybg"
 }
 
 var SETTINGS = {
@@ -24,6 +25,10 @@ var SETTINGS = {
     },
     day: {
         default: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    },
+    theme: {
+        bg: "white",
+        bgtoday: "#00ff00"
     }
 }
 
@@ -169,11 +174,14 @@ function addErrorMessage(message) {
     }
 }
 
+function today() {
+    return DATE_TO_DAY_ID[new Date().getDay()];
+}
+
 function showSpaceDataForToday(data) {
     console.log("received data", data);
-    var today = DATE_TO_DAY_ID[new Date().getDay()];
-    console.log("It is " + today);
-    showSpaceDataFor(data, today);
+    console.log("It is " + today());
+    showSpaceDataFor(data, today());
 }
 
 /* Show the space data for a specific day.
@@ -182,16 +190,20 @@ function showSpaceDataForToday(data) {
 function showSpaceDataFor(allData, day) {
     var data = allData[DAY_ID_TO_API[day]] || SETTINGS.defaultDay;
     console.log("Show data for " + day, data, allData);
+    var average = 0;
     for (var hour = 0; hour < 24; hour++) {
         var id = INDEX_TO_ID[hour];
         var value = data[hour] ? parseFloat(data[hour] + "") : SETTINGS.day.default[hour];
         showHeat(hour, id, value);
+        average += value;
     }
+    average /= 24;
     changeDay = function () {
         var nextDay = DATE_TO_DAY_ID[(DATE_TO_DAY_ID.indexOf(day) + 1) % DATE_TO_DAY_ID.length];
         showSpaceDataFor(allData, nextDay);
     }
     document.getElementById(ID.day).children[0].innerHTML = escapeHTML(getDayName(day));
+    document.getElementById(ID.bg).style.fill = today() == day ? computeColor(average, 128) : SETTINGS.theme.bg;
 }
 
 /* Change the day by clicking the middle.
@@ -199,6 +211,26 @@ function showSpaceDataFor(allData, day) {
  */
 function changeDay() {
     // Will be replaced.
+}
+
+/* compute a CSS color from a value
+ * 0 <= value <= 1
+ * red -> yellow -> green
+ * 0 <= min <= 255
+ */
+function computeColor(value, min) {
+    var green;
+    var red;
+    if (value < 0.5) {
+        green = value * 2;
+        red = 1;
+    } else {
+        green = 1;
+        red = 1 - (value - 0.5) * 2;
+    }
+    green = Math.ceil((255 - min) * green + min);
+    red = Math.ceil((255 - min) * red + min);
+    return "rgb(" + red + ", " + green + ", " + min + ")";
 }
 
 /* Show the heat for an element with an id and a value
@@ -214,21 +246,7 @@ function showHeat(hour, id, value) {
     var element = source.cloneNode(true);
     element.id = id;
 
-    // compute color
-    // red -> yellow -> green
-    var green;
-    var red;
-    if (value < 0.5) {
-        green = value * 2;
-        red = 1;
-    } else {
-        green = 1;
-        red = 1 - (value - 0.5) * 2;
-    }
-    green = Math.ceil(255 * green);
-    red = Math.ceil(255 * red);
-    var color = "rgb(" + red + ", " + green + ", 0)";
-    element.style.fill = color;
+    element.style.fill = computeColor(value, 0);
     element.style.fillOpacity = 1;
 
     // compute element
@@ -240,8 +258,6 @@ function showHeat(hour, id, value) {
     element.style.transformBox = "fill-box";
     element.style.transformOrigin = "0px 0px";
     element.style.transform = "rotate(" + deg + "deg) scale(" + scale + ")";
-//    element.setAttribute("transform")
-//    element.style.transform = "rotate(" + Math.ceil() + "deg)";
 
     // replace old element
     // add element
