@@ -12,6 +12,12 @@ var SETTINGS = {
     language: {
         default: "en"
     },
+    hour: {
+        clone: {
+            id: "1800",
+            hour: 18
+        }
+    }
 }
 
 var DAY_ID_TO_API = {
@@ -168,10 +174,10 @@ function showSpaceDataForToday(data) {
 function showSpaceDataFor(allData, day) {
     var data = allData[DAY_ID_TO_API[day]];
     console.log("Show data for " + day, data, allData);
-    for (var i = 0; i < 24; i++) {
-        var id = INDEX_TO_ID[i];
-        var value = parseFloat(data[i] + "");
-        showHeat(id, value);
+    for (var hour = 0; hour < 24; hour++) {
+        var id = INDEX_TO_ID[hour];
+        var value = parseFloat(data[hour] + "");
+        showHeat(hour, id, value);
     }
     changeDay = function () {
         var nextDay = DATE_TO_DAY_ID[(DATE_TO_DAY_ID.indexOf(day) + 1) % DATE_TO_DAY_ID.length];
@@ -190,13 +196,36 @@ function changeDay() {
 /* Show the heat for an element with an id and a value
  * 0 <= value <= 1  
  */
-function showHeat(id, value) {
-    var element = document.getElementById(id);
+function showHeat(hour, id, value) {
+    // get parameters for element
+    var source = document.getElementById(SETTINGS.hour.clone.id);
+    var old = document.getElementById(id);
+
+    // copy element
+    // see https://gomakethings.com/how-to-copy-or-clone-an-element-with-vanilla-js/
+    var element = source.cloneNode(true);
+    element.id = id;
+
+    // compute color
     var green = Math.ceil(255 * value);
     var color = "rgb(" + (255 - green) + ", " + green + ", 0)";
     element.style.fill = color;
     element.style.fillOpacity = 1;
-//    console.log("showHeat", id, color, element);
+
+    // set element rotation
+    // see https://stackoverflow.com/a/58805105
+    element.style.transformBox = "fill-box";
+    element.style.transformOrigin = "0px 0px";
+    element.style.transform = "rotate(" + Math.ceil(15 * (hour - SETTINGS.hour.clone.hour)) + "deg)";
+//    element.setAttribute("transform")
+//    element.style.transform = "rotate(" + Math.ceil() + "deg)";
+
+    // replace old element
+    // add element
+    old.parentElement.appendChild(element);
+    // remove element
+    // see https://www.w3schools.com/jsref/met_element_remove.asp
+    old.remove();
 }
 
 window.addEventListener("load", function() {
